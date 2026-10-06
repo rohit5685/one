@@ -861,7 +861,7 @@
     <header>
         <div class="container header-inner">
             <div class="logo">
-                <i class="fas fa-bolt"></i> NexusShop
+                <i class="fas fa-bolt"></i> rohitShop
             </div>
             <nav>
                 <ul>
@@ -1056,7 +1056,7 @@
         <!-- CTA BANNER -->
         <section class="cta-banner">
             <h2>Get <span style="color:var(--accent);">20% Off</span> Your First Order</h2>
-            <p>Join the Nexus community and unlock exclusive deals, early access drops, and member-only pricing.</p>
+            <p>Join the rohit community and unlock exclusive deals, early access drops, and member-only pricing.</p>
             <a href="#" class="btn btn-primary">
                 Claim Offer <i class="fas fa-arrow-right"></i>
             </a>
