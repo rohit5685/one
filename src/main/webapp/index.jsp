@@ -20,20 +20,16 @@
             --surface: #1e1e2a;
             --glass: rgba(255, 255, 255, 0.04);
             --border: rgba(255, 255, 255, 0.08);
+            --error: #f87171;
+            --success: #34d399;
             --radius: 24px;
             --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         /* ========== RESET & BASE ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -45,18 +41,14 @@
             align-items: center;
             overflow-x: hidden;
             line-height: 1.6;
-            /* Subtle animated gradient background */
-            background-image: 
+            background-image:
                 radial-gradient(circle at 10% 20%, rgba(255, 123, 84, 0.06) 0%, transparent 35%),
                 radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 35%);
             background-attachment: fixed;
         }
 
         /* ========== CONTAINER ========== */
-        .container {
-            width: min(1300px, 92%);
-            margin: 0 auto;
-        }
+        .container { width: min(1300px, 92%); margin: 0 auto; }
 
         /* ========== HEADER / NAV ========== */
         header {
@@ -71,11 +63,7 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; }
 
         .logo {
             font-family: 'Playfair Display', serif;
@@ -98,12 +86,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        nav ul {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
+        nav ul { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
 
         nav a {
             color: var(--primary-light);
@@ -127,19 +110,10 @@
             border-radius: 2px;
         }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+        nav a:hover { color: var(--primary); }
+        nav a:hover::after { width: 100%; }
 
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .nav-icons {
-            display: flex;
-            gap: 1.2rem;
-            align-items: center;
-        }
+        .nav-icons { display: flex; gap: 1.2rem; align-items: center; }
 
         .nav-icons button {
             background: var(--glass);
@@ -191,9 +165,7 @@
             padding: 5rem 0 3rem;
         }
 
-        .hero-content {
-            animation: fadeUp 0.8s ease-out;
-        }
+        .hero-content { animation: fadeUp 0.8s ease-out; }
 
         .hero-badge {
             display: inline-flex;
@@ -212,9 +184,7 @@
             backdrop-filter: blur(8px);
         }
 
-        .hero-badge i {
-            font-size: 0.8rem;
-        }
+        .hero-badge i { font-size: 0.8rem; }
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
@@ -240,11 +210,7 @@
             line-height: 1.7;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
+        .hero-buttons { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 
         .btn {
             display: inline-flex;
@@ -318,9 +284,7 @@
             transition: transform var(--transition);
         }
 
-        .hero-card:hover {
-            transform: translateY(-8px) scale(1.01);
-        }
+        .hero-card:hover { transform: translateY(-8px) scale(1.01); }
 
         .hero-card img {
             width: 100%;
@@ -330,10 +294,7 @@
             transition: opacity var(--transition), transform var(--transition);
         }
 
-        .hero-card:hover img {
-            opacity: 1;
-            transform: scale(1.04);
-        }
+        .hero-card:hover img { opacity: 1; transform: scale(1.04); }
 
         .hero-card-overlay {
             position: absolute;
@@ -347,10 +308,7 @@
             align-items: flex-end;
         }
 
-        .hero-card-overlay h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
+        .hero-card-overlay h3 { font-size: 1.3rem; font-weight: 700; }
 
         .hero-card-overlay p {
             font-size: 0.85rem;
@@ -411,30 +369,12 @@
             flex-shrink: 0;
         }
 
-        .feature-item:nth-child(2) .feature-icon {
-            background: linear-gradient(135deg, var(--accent-2), #00ffcc);
-        }
+        .feature-item:nth-child(2) .feature-icon { background: linear-gradient(135deg, var(--accent-2), #00ffcc); }
+        .feature-item:nth-child(3) .feature-icon { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: #fff; }
+        .feature-item:nth-child(4) .feature-icon { background: linear-gradient(135deg, #f472b6, #ec4899); color: #fff; }
 
-        .feature-item:nth-child(3) .feature-icon {
-            background: linear-gradient(135deg, #a78bfa, #7c3aed);
-            color: #fff;
-        }
-
-        .feature-item:nth-child(4) .feature-icon {
-            background: linear-gradient(135deg, #f472b6, #ec4899);
-            color: #fff;
-        }
-
-        .feature-text h4 {
-            font-size: 0.95rem;
-            font-weight: 700;
-            margin-bottom: 0.15rem;
-        }
-
-        .feature-text p {
-            font-size: 0.8rem;
-            color: var(--primary-light);
-        }
+        .feature-text h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.15rem; }
+        .feature-text p { font-size: 0.8rem; color: var(--primary-light); }
 
         /* ========== SECTION TITLES ========== */
         .section-header {
@@ -452,9 +392,7 @@
             letter-spacing: -0.02em;
         }
 
-        .section-header h2 span {
-            color: var(--accent);
-        }
+        .section-header h2 span { color: var(--accent); }
 
         .section-header a {
             color: var(--accent-2);
@@ -467,9 +405,7 @@
             transition: gap var(--transition);
         }
 
-        .section-header a:hover {
-            gap: 0.8rem;
-        }
+        .section-header a:hover { gap: 0.8rem; }
 
         /* ========== PRODUCT GRID ========== */
         .product-grid {
@@ -514,9 +450,7 @@
             transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .product-card:hover .product-image img {
-            transform: scale(1.08);
-        }
+        .product-card:hover .product-image img { transform: scale(1.08); }
 
         .product-actions {
             position: absolute;
@@ -530,10 +464,7 @@
             transition: all var(--transition);
         }
 
-        .product-card:hover .product-actions {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .product-card:hover .product-actions { opacity: 1; transform: translateX(0); }
 
         .product-actions button {
             width: 40px;
@@ -569,24 +500,11 @@
             letter-spacing: 0.06em;
         }
 
-        .badge-new {
-            background: var(--accent-2);
-            color: #0b0b12;
-        }
+        .badge-new { background: var(--accent-2); color: #0b0b12; }
+        .badge-sale { background: var(--accent); color: #0b0b12; }
+        .badge-hot { background: #f472b6; color: #fff; }
 
-        .badge-sale {
-            background: var(--accent);
-            color: #0b0b12;
-        }
-
-        .badge-hot {
-            background: #f472b6;
-            color: #fff;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
+        .product-info { padding: 1.5rem; }
 
         .product-category {
             font-size: 0.75rem;
@@ -597,41 +515,15 @@
             margin-bottom: 0.5rem;
         }
 
-        .product-info h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.4rem;
-            line-height: 1.3;
-        }
+        .product-info h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1.3; }
 
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            margin-bottom: 1rem;
-        }
+        .product-rating { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 1rem; }
+        .product-rating i { color: #fbbf24; font-size: 0.85rem; }
+        .product-rating span { font-size: 0.8rem; color: var(--primary-light); }
 
-        .product-rating i {
-            color: #fbbf24;
-            font-size: 0.85rem;
-        }
+        .product-bottom { display: flex; justify-content: space-between; align-items: center; }
 
-        .product-rating span {
-            font-size: 0.8rem;
-            color: var(--primary-light);
-        }
-
-        .product-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .product-price {
-            font-size: 1.3rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
+        .product-price { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
 
         .product-price .old {
             font-size: 0.9rem;
@@ -689,10 +581,7 @@
             animation: rotateGlow 20s linear infinite;
         }
 
-        .cta-banner > * {
-            position: relative;
-            z-index: 1;
-        }
+        .cta-banner > * { position: relative; z-index: 1; }
 
         .cta-banner h2 {
             font-family: 'Playfair Display', serif;
@@ -701,6 +590,8 @@
             letter-spacing: -0.02em;
         }
 
+        .cta-banner h2 span { color: var(--accent); }
+
         .cta-banner p {
             color: var(--primary-light);
             font-size: 1.1rem;
@@ -708,10 +599,120 @@
             margin: 0 auto 2rem;
         }
 
-        .cta-banner .btn-primary {
-            font-size: 1.05rem;
-            padding: 1.1rem 2.8rem;
+        .cta-banner .btn-primary { font-size: 1.05rem; padding: 1.1rem 2.8rem; }
+
+        /* ========== CONTACT SECTION ========== */
+        .contact {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 5rem;
         }
+
+        .contact-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+        }
+
+        .contact-intro h2 span { color: var(--accent); }
+
+        .contact-intro > p {
+            color: var(--primary-light);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details { list-style: none; display: grid; gap: 1rem; }
+
+        .contact-details li {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            color: var(--primary-light);
+            font-size: 0.95rem;
+        }
+
+        .contact-details i {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        #contact-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2.2rem;
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+        .form-field { display: grid; gap: 0.45rem; }
+
+        .form-field label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--primary-light);
+        }
+
+        .form-field input,
+        .form-field textarea {
+            width: 100%;
+            padding: 0.9rem 1.1rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color var(--transition), box-shadow var(--transition);
+        }
+
+        .form-field textarea { min-height: 140px; resize: vertical; }
+
+        .form-field input::placeholder,
+        .form-field textarea::placeholder { color: #6b6b85; }
+
+        .form-field input:focus,
+        .form-field textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .form-field.invalid input,
+        .form-field.invalid textarea { border-color: var(--error); }
+
+        .field-error {
+            font-size: 0.8rem;
+            color: var(--error);
+            min-height: 1em;
+        }
+
+        #contact-form .btn { justify-self: start; }
+
+        .form-status {
+            font-size: 0.9rem;
+            font-weight: 500;
+            min-height: 1.4em;
+        }
+
+        .form-status.success { color: var(--success); }
+        .form-status.error { color: var(--error); }
 
         /* ========== FOOTER ========== */
         footer {
@@ -729,15 +730,11 @@
             gap: 1.5rem;
         }
 
-        .footer-inner p {
-            color: var(--primary-light);
-            font-size: 0.85rem;
-        }
+        .footer-inner p { color: var(--primary-light); font-size: 0.85rem; }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-        }
+        .footer-inner .logo { font-size: 1.5rem; }
+
+        .social-links { display: flex; gap: 1rem; }
 
         .social-links a {
             width: 42px;
@@ -764,14 +761,8 @@
 
         /* ========== ANIMATIONS ========== */
         @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes pulse {
@@ -784,6 +775,11 @@
             to { transform: rotate(360deg); }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            html { scroll-behavior: auto; }
+        }
+
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
             .hero {
@@ -793,38 +789,18 @@
                 padding: 3rem 0;
             }
 
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
+            .hero p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { order: -1; }
+            .hero-card { width: 320px; height: 400px; }
+            .hero-glow { width: 320px; height: 320px; }
 
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-visual {
-                order: -1;
-            }
-
-            .hero-card {
-                width: 320px;
-                height: 400px;
-            }
-
-            .hero-glow {
-                width: 320px;
-                height: 320px;
-            }
+            .contact { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .featured-strip {
-                flex-direction: column;
-            }
+            nav ul { display: none; }
+            .featured-strip { flex-direction: column; }
 
             .section-header {
                 flex-direction: column;
@@ -832,26 +808,23 @@
                 gap: 1rem;
             }
 
-            .section-header h2 {
-                font-size: 1.9rem;
-            }
+            .section-header h2,
+            .contact-intro h2 { font-size: 1.9rem; }
 
-            .cta-banner {
-                padding: 2.5rem 1.5rem;
-            }
+            .cta-banner { padding: 2.5rem 1.5rem; }
+            .cta-banner h2 { font-size: 2rem; }
 
-            .cta-banner h2 {
-                font-size: 2rem;
-            }
+            #contact-form { padding: 1.5rem; }
+            .form-row { grid-template-columns: 1fr; }
 
-            .footer-inner {
-                flex-direction: column;
-                text-align: center;
-            }
+            .footer-inner { flex-direction: column; text-align: center; }
+            .product-grid { grid-template-columns: 1fr; }
+        }
 
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 400px) {
+            .hero-card { width: 100%; height: 360px; }
+            .nav-icons { gap: 0.6rem; }
+            .nav-icons button { width: 40px; height: 40px; }
         }
     </style>
 </head>
@@ -866,9 +839,9 @@
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li><a href="#trending">Shop</a></li>
                     <li><a href="#">Collections</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="nav-icons">
@@ -894,7 +867,7 @@
                 <h1>Elevate Your <span>Everyday</span> Style</h1>
                 <p>Discover curated collections of premium products designed to inspire. Where modern aesthetics meet timeless quality.</p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary">
+                    <a href="#trending" class="btn btn-primary">
                         Shop Now <i class="fas fa-arrow-right"></i>
                     </a>
                     <a href="#" class="btn btn-outline">
@@ -950,7 +923,7 @@
         </section>
 
         <!-- PRODUCTS -->
-        <div class="section-header">
+        <div class="section-header" id="trending">
             <h2>Trending <span>Now</span></h2>
             <a href="#">View All <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -1055,9 +1028,147 @@
 
         <!-- CTA BANNER -->
         <section class="cta-banner">
-            <h2>Get <span style="color:var(--accent);">20% Off</span> Your First Order</h2>
+            <h2>Get <span>20% Off</span> Your First Order</h2>
             <p>Join the rohit community and unlock exclusive deals, early access drops, and member-only pricing.</p>
             <a href="#" class="btn btn-primary">
                 Claim Offer <i class="fas fa-arrow-right"></i>
             </a>
-        </
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+            <div class="contact-intro">
+                <h2>Get in <span>Touch</span></h2>
+                <p>Questions about an order, sizing, or a product? Send us a message and we'll reply within one business day.</p>
+                <ul class="contact-details">
+                    <li><i class="fas fa-envelope"></i> support@rohitshop.com</li>
+                    <li><i class="fas fa-phone"></i> +91 00000 00000</li>
+                    <li><i class="fas fa-location-dot"></i> Bangalore, India</li>
+                </ul>
+            </div>
+
+            <form id="contact-form" novalidate>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+                        <span class="field-error" aria-live="polite"></span>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        <span class="field-error" aria-live="polite"></span>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+                    <span class="field-error" aria-live="polite"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container footer-inner">
+            <div class="logo">
+                <i class="fas fa-bolt"></i> rohitShop
+            </div>
+            <p>&copy; <span id="year"></span> rohitShop. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://github.com/rohit5685" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Footer year
+            var yearEl = document.getElementById('year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // ===== Contact form handling =====
+            var form = document.getElementById('contact-form');
+            if (!form) return; // Guard: page has no contact form, so do nothing instead of throwing
+
+            var statusEl = form.querySelector('.form-status');
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            function setError(input, message) {
+                var field = input.closest('.form-field');
+                var errorEl = field.querySelector('.field-error');
+                field.classList.toggle('invalid', Boolean(message));
+                errorEl.textContent = message || '';
+                input.setAttribute('aria-invalid', message ? 'true' : 'false');
+            }
+
+            function validate() {
+                var name = form.elements.name;
+                var email = form.elements.email;
+                var message = form.elements.message;
+                var valid = true;
+
+                if (!name.value.trim()) {
+                    setError(name, 'Please enter your name.');
+                    valid = false;
+                } else {
+                    setError(name, '');
+                }
+
+                if (!email.value.trim()) {
+                    setError(email, 'Please enter your email.');
+                    valid = false;
+                } else if (!emailPattern.test(email.value.trim())) {
+                    setError(email, 'Please enter a valid email address.');
+                    valid = false;
+                } else {
+                    setError(email, '');
+                }
+
+                if (!message.value.trim()) {
+                    setError(message, 'Please enter a message.');
+                    valid = false;
+                } else {
+                    setError(message, '');
+                }
+
+                return valid;
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                statusEl.className = 'form-status';
+                statusEl.textContent = '';
+
+                if (!validate()) {
+                    statusEl.classList.add('error');
+                    statusEl.textContent = 'Please fix the highlighted fields.';
+                    var firstInvalid = form.querySelector('[aria-invalid="true"]');
+                    if (firstInvalid) firstInvalid.focus();
+                    return;
+                }
+
+                // TODO: send the data to your backend here, e.g.
+                // fetch('/api/contact', { method: 'POST', body: new FormData(form) })
+                statusEl.classList.add('success');
+                statusEl.textContent = 'Thank you for contacting us! We will get back to you soon.';
+                form.reset();
+            });
+
+            // Clear a field's error as soon as the user edits it
+            form.addEventListener('input', function (e) {
+                if (e.target.matches('input, textarea')) setError(e.target, '');
+            });
+        });
+    </script>
+</body>
+</html>
